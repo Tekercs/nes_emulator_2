@@ -1,12 +1,19 @@
 cmake_minimum_required(VERSION 3.18)
 include(FetchContent)
 
+
+FetchContent_Declare(
+  SDL3
+  GIT_REPOSITORY git@github.com:libsdl-org/SDL.git
+  GIT_TAG release-2.30.0
+)
+
 FetchContent_Declare(
   googletest
   URL https://github.com/google/googletest/archive/5376968f6948923e2411081fd9372e71a59d8e77.zip
 )
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-FetchContent_MakeAvailable(googletest)
+FetchContent_MakeAvailable(googletest SDL3)
 
 project(
 	nesemu
