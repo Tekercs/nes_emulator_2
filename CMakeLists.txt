@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 3.18)
 include(FetchContent)
 
-
 FetchContent_Declare(
   SDL3
   GIT_REPOSITORY git@github.com:libsdl-org/SDL.git
