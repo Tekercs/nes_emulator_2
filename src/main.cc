@@ -1,6 +1,6 @@
-#include <Helo.h>
+#include <iostream>
 
 int main() {
-	say_helo();
+	std::cout << "helo world \n";
 	return 0;
 }
