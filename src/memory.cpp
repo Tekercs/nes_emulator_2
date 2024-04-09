@@ -1,19 +1,18 @@
 #include <algorithm>
 #include <cstdint>
-#include <cstring>
 #include <iterator>
 #include <memory>
 #include <memory.h>
 
-constexpr uint16_t ZEROPAGE            =0x0000;
-constexpr uint16_t STACK               =0x0100;
-constexpr uint16_t RAM                 =0x0200;
-constexpr uint16_t RAM_MIRROR          =0x0800;
+constexpr uint16_t ZEROPAGE            = 0x0000;
+constexpr uint16_t STACK               = 0x0100;
+constexpr uint16_t RAM                 = 0x0200;
+constexpr uint16_t RAM_MIRROR          = 0x0800;
 
-constexpr uint16_t IO_REGISTERS        =0x2000;
-constexpr uint16_t IO_REGISTERS_SIZE   =8;
-constexpr uint16_t IO_REGISTERS_MIRROR =0x2008;
-constexpr uint16_t IO_REGISTERS_SEC    =0x4000;
+constexpr uint16_t IO_REGISTERS        = 0x2000;
+constexpr uint16_t IO_REGISTERS_SIZE   = 8;
+constexpr uint16_t IO_REGISTERS_MIRROR = 0x2008;
+constexpr uint16_t IO_REGISTERS_SEC    = 0x4000;
 
 //constexpr uint16_t EXP_ROM             =0x4020;
 //constexpr uint16_t SRAM                =0x6000;
