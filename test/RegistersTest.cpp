@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include <registers.h>
+#include <Registers.h>
 
 using namespace Emulator::Cpu;
 
@@ -32,11 +32,17 @@ TEST_F(RegistersTest, program_counter_can_be_incremented) {
 }
 
 TEST_F(RegistersTest, stack_pointer_can_be_decremented) {
+	// WHEN: decrementing the stack pointer offset after init
 	this->registers.decrement_stack_pointer_offset();
+
+	// THEN: it will be smaller by 1
 	EXPECT_EQ(this->registers.get_stack_pointer_offset(),INITVAL_STACKPOINTEROFFSET -1);
 }
 
 TEST_F(RegistersTest, stack_pointer_can_be_incremented) {
+	// WHEN: incrementing the stack pointer offset after init
 	this->registers.increment_stack_pointer_offset();
+
+	// THEN: it will be one bigger
 	EXPECT_EQ(this->registers.get_stack_pointer_offset(), INITVAL_STACKPOINTEROFFSET +1);
 }

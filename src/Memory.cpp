@@ -1,8 +1,5 @@
-#include <algorithm>
+#include <Memory.h>
 #include <cstdint>
-#include <iterator>
-#include <memory>
-#include <memory.h>
 
 constexpr uint16_t ZEROPAGE            = 0x0000;
 constexpr uint16_t STACK               = 0x0100;
