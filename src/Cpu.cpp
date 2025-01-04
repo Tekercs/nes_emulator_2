@@ -10,17 +10,11 @@ constexpr uint8_t MAX_8BIT_INT = 0xFF;
 constexpr uint8_t LAST_8BIT_INT_MASK = 0B10000000;
 
 constexpr uint8_t ADC_IMMEDIATE_ADDRESSING_OPCODE = 0x69;
-
-Cpu::Cpu()
-: memory(make_shared<Memory::Memory>())
-, registers(make_shared<Registers>())
-, nmi(false)
-{}
+constexpr uint8_t ADC_ZEROPAGE_ADDRESSING_OPCODE = 0x65;
 
 Cpu::Cpu(std::shared_ptr<Emulator::Memory::Memory> memory, std::shared_ptr<Emulator::Cpu::Registers> registers)
 : memory((std::move(memory)))
 , registers((std::move(registers)))
-, nmi(false)
 { }
 
 void Cpu::execute_next_instruction() {
@@ -35,13 +29,17 @@ void Cpu::execute_next_instruction() {
 void Cpu::execute_instruction(uint8_t opcode) {
 	switch (opcode) {
 		case ADC_IMMEDIATE_ADDRESSING_OPCODE:
-			this->ADC(this->immediate_addressing());
+			this->ADC(this->load_from_memory_with_immediate_addressing());
 			//this->notifyListeners({"cyclepassed", "2"});
 			break;
+		//case 0x65:
+		//	this->ADC(this->zeroPageValueAddressing());
+		//	this->notifyListeners({"cyclepassed", "2"});
+		//	break;
 	}
 }
 
-uint8_t Cpu::immediate_addressing()
+uint8_t Cpu::load_from_memory_with_immediate_addressing()
 {
     this->registers->increment_program_counter();
     return this->memory->get_from(this->registers->get_program_counter());
