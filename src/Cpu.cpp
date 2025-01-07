@@ -39,14 +39,12 @@ void Cpu::execute_instruction(uint8_t opcode) {
 	}
 }
 
-uint8_t Cpu::load_from_memory_with_immediate_addressing()
-{
+uint8_t Cpu::load_from_memory_with_immediate_addressing() {
     this->registers->increment_program_counter();
     return this->memory->get_from(this->registers->get_program_counter());
 }
 
-void Cpu::ADC(uint8_t value)
-{
+void Cpu::ADC(uint8_t value) {
 	uint16_t result = this->registers->get_accumulator() + value;
 
 	if (this->registers->is_carry_remain())
