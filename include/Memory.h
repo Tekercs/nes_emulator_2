@@ -78,7 +78,8 @@ namespace Emulator::Memory
 		* @details Write the passed 8 bit long unsigned integer
 		* value to the given memory address which represented
 		* with 16 bit unsigned integer value.
-		* Also firing an memory write event.
+		* Also firing an memory write event so special memory address
+		* can be hooked up with logic.
 		*/
 		public: void set_at(uint16_t address, uint8_t value);
 
@@ -90,7 +91,8 @@ namespace Emulator::Memory
 		*
 		* @details Return the 8 Bit unsinged integer value
 		* which is stored at the address (16 bit unsgined integer) location in
-		* the memory and sends notificaton that memory read happend
+		* the memory and sends notificaton that memory read happend so special
+		* addresses can be used for actall logic.
 		*/
 		public: uint8_t get_from(uint16_t address);
 	};
