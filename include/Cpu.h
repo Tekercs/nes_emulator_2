@@ -68,6 +68,17 @@ namespace Emulator::Cpu
 		private: uint8_t load_from_memory_with_immediate_addressing();
 
 		/**
+		 * @brief fetching value from zero page
+		 *
+		 * @return value on zero page address
+		 *
+		 * @details fetches the next 8bit and uses that for memory address 0x00 -0x00FF
+		 * and laods the value from those adresses, this way zero page can be accessed
+		 * faster than normal memory locations as we only need to read in the last 8 but
+		 */
+		private: uint8_t load_from_memory_with_zero_page_value_addressing();
+
+		/**
 		 * @brief creates a new CPU object, stores a memory and register smartptr to use them for executing instructions
 		 */
 		public: explicit Cpu(std::shared_ptr<Emulator::Memory::Memory> memory, std::shared_ptr<Emulator::Cpu::Registers> registers);
