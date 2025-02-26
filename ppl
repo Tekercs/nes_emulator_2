@@ -41,6 +41,15 @@ gen_doc() {
 	doxygen ./doxygen_config
 }
 
+full() {
+	clean
+	cmake_debug
+	lint
+	gen_doc
+	build
+	test
+}
+
 for var in $@
 do
 	echo "====== $var ======"
