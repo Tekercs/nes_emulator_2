@@ -15,7 +15,7 @@ To build use the ppl shell script in the project
 ./ppl full
 ```
 
-Or if only interested in specific steps/partial build (consult the shell script for available commands)[https://github.com/Tekercs/nes_emulator_2/blob/master/ppl].
+Or if only interested in specific steps/partial build [consult the shell script for available commands](https://github.com/Tekercs/nes_emulator_2/blob/master/ppl).
 
 ## nes doc links
 
