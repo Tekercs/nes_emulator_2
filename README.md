@@ -1,10 +1,6 @@
-# helo_world - cpp project skeleton
+# NES emulator 2
 
-this is my cpp skeleton project, to init new projects
+## nes doc links
 
-# tooling
-
-- cmake
-- clang tidy
-- doxygen
-- gtest
+[cpu addressing modes](https://www.nesdev.org/wiki/CPU_addressing_modes)
+[cpu instructions](https://www.nesdev.org/wiki/Instruction_reference)
