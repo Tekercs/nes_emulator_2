@@ -79,6 +79,17 @@ namespace Emulator::Cpu
 		private: uint8_t load_from_memory_with_zero_page_value_addressing();
 
 		/**
+		 * @brief load address from zero page with shifted X 
+		 *
+		 * @return uint8_t value stored in the given mem location
+		 *
+		 * @details using the value from the program counter + the current value of the X 
+		 * register to load a value from memory, the sum can't access anything outside zero page
+		 * (0x00 - 0xFF memory address range), if the sum is larger then it loops back
+		 */
+		private: uint8_t load_from_memory_with_zero_page_x_value_addressing();
+
+		/**
 		 * @brief creates a new CPU object, stores a memory and register smartptr to use them for executing instructions
 		 */
 		public: explicit Cpu(std::shared_ptr<Emulator::Memory::Memory> memory, std::shared_ptr<Emulator::Cpu::Registers> registers);
